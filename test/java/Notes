@@ -1,0 +1,92 @@
+Maven Project
+TestNG Basics Review
+
+Maven is a Java based build automaton tool that helps us
+to manage dependencies - in pom.xml we specify all dependencies and they can be found on maven central repository (jars)
+
+create a projects structure/hierarcy - maven has many different archetypes to support different java projects
+
+2 things we need to create a maven project
+groupID - company/domain
+artifactID - project name
+==> maven project with structure:
+
+src: main: java
+resource
+test: java
+resources
+pom.xml - configuration file for our project where we define dependencies and plugins
+
+target - outcome (files, reports, jar/war files etc) from the execution
+
+execute tests -
+
+TestNG test automation tool/framework
+
+@Test - marks methods as a test method
+
+@Before (suites, test, class, method)
+@After (suites, test, class, method)
+
+
+testng.xml --> configuration file in TesNG
+
+<suite>
+<test>
+<classes>
+<class name=“”>
+<methods>
+
+</method>
+</class>
+</classes>
+</test>
+
+<test>
+<classes>
+<class name=“”>
+<methods>
+
+
+</method>
+</class>
+</classes>
+</test>
+</suite>
+
+How to exclude test from execution
+
+@Test(enabled=false)
+
+through xml using <exclude>
+
+@Test(priority=1 to .....)
+
+@Test(dependsOnMethods = “name”)
+@Test(dependsOnGroups = “name”)
+
+@Test(groups=“name”)
+
+
+DDT - test same functionality using different sets of data
+changing data does not affect a source/test code code
+
+TestNG supports DDT using @DataProvider
+
+Steps:
+
+1.create a method that return of 2D array
+
+calle data provider method to whatever test you need
+
+Assertions in TestNG
+
+Hard Assertion - will stop execution ones it’s failed (uses Assert Class)
+Soft Assertion - collects errors and throws them when we will call assertAll (uses SoftAssert)
+
+Listeners - components of testNG that listens/ keeps track of any event during execution (start, finish, skip, pass, fail)
+
+Steps to implement:
+
+create a class that implement ITestListener
+specify/configure in xml file
